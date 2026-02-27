@@ -1,6 +1,6 @@
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import museumLogo from '../museum-logo.png'
+import museumLogo from '../museum.Logo.svg'
 
 export default function HeroSection({ onLaunch }) {
     const containerRef = useRef()
@@ -11,7 +11,6 @@ export default function HeroSection({ onLaunch }) {
     const taglineRef = useRef()
     const badgeRef = useRef()
     const featuresRef = useRef()
-    const [isHovered, setIsHovered] = useState(false)
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -38,20 +37,6 @@ export default function HeroSection({ onLaunch }) {
                     ease: 'back.out(1.7)',
                 },
                 '-=0.3'
-            )
-
-            // Museum logo entrance (same style as title)
-            tl.fromTo(
-                museumLogoRef.current,
-                { opacity: 0, y: 60, rotateX: -90 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    rotateX: 0,
-                    duration: 0.8,
-                    ease: 'back.out(1.7)',
-                },
-                '-=0.6'
             )
 
             // Subtitle
@@ -253,25 +238,25 @@ export default function HeroSection({ onLaunch }) {
     return (
         <div
             ref={containerRef}
-            className="relative z-10 flex flex-col items-center justify-center h-full px-6 text-center md:translate-x-20"
+            className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center"
         >
             {/* Background decorative elements removed */}
 
             {/* Official Launch text */}
             <div
                 ref={badgeRef}
-                className="fade-away mb-6"
+                className="fade-away relative z-30 mb-6 md:translate-x-[19rem]"
             >
-                <span className="text-sm font-medium tracking-widest uppercase text-[#361717]" style={{ fontFamily: 'var(--font-mono)' }}>
+                <span className="text-lg md:text-xl font-medium tracking-widest uppercase text-[#361717]" style={{ fontFamily: 'var(--font-mono)' }}>
                     Official Launch of
                 </span>
             </div>
 
             {/* Main Title with Logo */}
-            <div className="fade-away relative">
+            <div className="fade-away relative z-20">
                 <h1
                     ref={titleRef}
-                    className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6"
+                    className="relative z-30 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-6 md:translate-x-[19rem]"
                     style={{ fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}
                 >
                     <span className="glow-text">{splitText('THE  DEPARTMENTS')}</span>
@@ -286,14 +271,14 @@ export default function HeroSection({ onLaunch }) {
                     ref={museumLogoRef}
                     src={museumLogo}
                     alt="National Museums Logo"
-                    className="absolute top-1/2 -left-52 md:-left-[33rem] -translate-y-1/2 w-96 h-96 md:w-[50rem] md:h-[50rem] object-contain opacity-90"
+                    className="absolute z-0 top-[65%] -left-44 md:-left-[31rem] -translate-y-1/2 w-[24rem] h-[24rem] md:w-[52rem] md:h-[52rem] object-contain opacity-100"
                 />
             </div>
 
             {/* Subtitle */}
             <p
                 ref={subtitleRef}
-                className="fade-away max-w-xl text-lg md:text-xl text-[#361717]/50 mb-8 leading-relaxed"
+                className="fade-away relative z-30 max-w-xl text-lg md:text-xl text-[#361717]/50 mb-8 leading-relaxed md:translate-x-[19rem]"
                 style={{ fontFamily: 'var(--font-body)' }}
             >
                 Experience the lauch of the Offical National History Museum Website
@@ -327,24 +312,11 @@ export default function HeroSection({ onLaunch }) {
             {/* Launch Button */}
             <button
                 ref={btnRef}
-                className="launch-btn"
+                className="launch-btn relative z-30 md:ml-[19rem]"
                 onClick={handleLaunchClick}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
                 id="launch-button"
             >
-                <span className="relative z-10 flex items-center gap-3">
-                    <svg
-                        className={`btn-icon w-5 h-5 transition-transform duration-500 ${isHovered ? 'translate-x-1 -translate-y-1' : ''}`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                    >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" />
-                    </svg>
-                    <span className="btn-text">LAUNCH</span>
-                </span>
+                <span className="btn-text relative z-10">LAUNCH</span>
             </button>
         </div>
     )

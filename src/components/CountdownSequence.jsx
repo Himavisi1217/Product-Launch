@@ -417,24 +417,8 @@ export default function CountdownSequence({ onComplete }) {
                 </span>
             </div>
 
-            {/* Phase Label */}
-            <div ref={labelsRef} key={`labels-${currentPhase}`} className="flex flex-col items-center gap-2">
-                <span
-                    className="phase-text countdown-label"
-                    style={{ color: '#361717' }}
-                >
-                    {phase.label}
-                </span>
-                <span
-                    className="phase-text text-sm tracking-widest uppercase"
-                    style={{ fontFamily: 'var(--font-mono)', color: '#361717' }}
-                >
-                    {phase.sublabel}
-                </span>
-            </div>
-
             {/* Progress Bar */}
-            <div className="mt-10 flex flex-col items-center gap-3">
+            <div className="mt-10 flex flex-col items-center">
                 <div className="progress-track">
                     <div
                         className="progress-fill"
@@ -445,54 +429,6 @@ export default function CountdownSequence({ onComplete }) {
                         }}
                     />
                 </div>
-                <div className="flex items-center gap-6">
-                    <span
-                        className="text-xs tracking-wider uppercase"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'rgba(54, 23, 23, 0.3)' }}
-                    >
-                        {Math.round(progress)}%
-                    </span>
-                    <PulsingDots color={phase.color} />
-                    <span
-                        className="text-xs tracking-wider uppercase"
-                        style={{ fontFamily: 'var(--font-mono)', color: 'rgba(54, 23, 23, 0.3)' }}
-                    >
-                        Step {currentPhase + 1}/3
-                    </span>
-                </div>
-            </div>
-
-            {/* Status indicators */}
-            <div className="mt-8 flex flex-col items-center gap-1">
-                {COUNTDOWN_PHASES.map((p, i) => (
-                    <div
-                        key={i}
-                        className="flex items-center gap-3 text-xs tracking-wider uppercase"
-                        style={{
-                            fontFamily: 'var(--font-mono)',
-                            color: i <= currentPhase ? p.color : 'rgba(54,23,23,0.15)',
-                            transition: 'color 0.5s ease',
-                        }}
-                    >
-                        <div
-                            className="w-2 h-2 rounded-full transition-all duration-500"
-                            style={{
-                                backgroundColor: i < currentPhase ? p.color : i === currentPhase ? p.color : 'rgba(54,23,23,0.1)',
-                                boxShadow: i <= currentPhase ? `0 0 8px ${p.color}` : 'none',
-                            }}
-                        />
-                        <span style={{ opacity: i <= currentPhase ? 1 : 0.3 }}>{p.label}</span>
-                        {i < currentPhase && (
-                            <svg className="w-3 h-3" fill={p.color} viewBox="0 0 20 20">
-                                <path
-                                    fillRule="evenodd"
-                                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                    clipRule="evenodd"
-                                />
-                            </svg>
-                        )}
-                    </div>
-                ))}
             </div>
         </div>
     )
