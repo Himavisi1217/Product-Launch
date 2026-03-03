@@ -149,18 +149,18 @@ export default function HeroSection({ onLaunch }) {
             {/* Solution Provider Text - Bottom Right */}
             <span
                 ref={solutionProviderRef}
-                className="fixed z-10 right-14 bottom-48 text-xl md:text-2xl font-medium tracking-widest uppercase text-[#361717]"
+                className="fixed z-10 right-8 bottom-36 text-base md:text-lg font-medium tracking-widest uppercase text-[#361717]"
                 style={{ fontFamily: 'var(--font-mono)' }}
             >
                 Solution Provider
             </span>
 
             {/* SLT-Mobitel Logo - Bottom Right */}
-            <div ref={sltLogoRef} className="fixed z-10 right-28 bottom-36 flex flex-col items-center gap-2">
+            <div ref={sltLogoRef} className="fixed z-10 right-8 bottom-14 flex flex-col items-center gap-2">
                 <img
                     src={sltMobitelLogo}
                     alt="SLT-Mobitel Logo"
-                    className="w-56 md:w-72 h-auto object-contain opacity-85"
+                    className="w-48 md:w-60 h-auto object-contain opacity-85"
                 />
             </div>
 
@@ -189,14 +189,14 @@ export default function HeroSection({ onLaunch }) {
                     ref={museumLogoRef}
                     src={museumLogo}
                     alt="National Museums Logo"
-                    className="fixed z-10 -left-10 -bottom-12 w-96 h-96 md:w-[34rem] md:h-[34rem] object-contain opacity-85"
+                    className="fixed z-10 -left-16 -bottom-10 w-64 h-64 md:w-[24rem] md:h-[24rem] object-contain opacity-85"
                 />
             </div>
 
             {/* Subtitle */}
             <p
                 ref={subtitleRef}
-                className="fade-away relative z-30 max-w-xl text-lg md:text-xl text-[#361717]/50 mb-6 leading-relaxed"
+                className="fade-away relative z-30 max-w-xl text-lg md:text-xl text-[#361717]/75 mb-6 leading-relaxed"
                 style={{ fontFamily: 'var(--font-body)' }}
             >
                 Experience the launch of the Official National History Museum Website
@@ -228,8 +228,6 @@ export default function HeroSection({ onLaunch }) {
             </br>
             <br>
             </br>
-            <br></br>
-            <br></br>
             <br>
             </br>
             {/* Launch Button */}
