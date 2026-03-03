@@ -142,32 +142,33 @@ export default function HeroSection({ onLaunch }) {
     }
 
     return (
+        <section className="hero-movable-section" style={{ marginTop: '10rem' }}>
         <div
             ref={containerRef}
-            className="relative z-20 flex flex-col items-center justify-center h-full px-6 pb-52 text-center"
+            className="relative z-20 flex flex-col items-center justify-center h-full px-6 pb-0 text-center"
         >
             {/* Solution Provider Text - Bottom Right */}
             <span
                 ref={solutionProviderRef}
-                className="fixed z-10 right-12 bottom-28 text-xs md:text-sm font-medium tracking-widest uppercase text-[#361717]"
+                className="fixed z-10 right-12 bottom-32 text-lg md:text-2xl font-bold tracking-widest uppercase text-[#361717]"
                 style={{ fontFamily: 'var(--font-mono)' }}
             >
                 Solution Provider
             </span>
 
             {/* SLT-Mobitel Logo - Bottom Right */}
-            <div ref={sltLogoRef} className="fixed z-10 right-16 bottom-12 flex flex-col items-center gap-2">
+            <div ref={sltLogoRef} className="fixed z-10 right-16 bottom-8 flex flex-col items-center gap-2">
                 <img
                     src={sltMobitelLogo}
                     alt="SLT-Mobitel Logo"
-                    className="w-36 md:w-40 h-auto object-contain opacity-85"
+                    className="w-52 md:w-64 h-auto object-contain opacity-90"
                 />
             </div>
 
             {/* Official Launch text */}
             <div
                 ref={badgeRef}
-                className="fade-away relative z-30 -mt-64 mb-12 w-full flex justify-center text-center"
+                className="fade-away relative z-30 -mt-64 mb-0 w-full flex justify-center text-center"
             >
                 <span className="text-xl md:text-2xl font-medium tracking-widest uppercase text-[#361717]" style={{ fontFamily: 'var(--font-mono)' }}>
                     Official website of the
@@ -178,7 +179,7 @@ export default function HeroSection({ onLaunch }) {
             <div className="relative z-20">
                 <h1
                     ref={titleRef}
-                    className="fade-away relative z-30 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-12"
+                    className="fade-away relative z-30 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-1"
                     style={{ fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}
                 >
                     <span className="glow-text">{splitText('DEPARTMENT OF')}</span>
@@ -189,11 +190,12 @@ export default function HeroSection({ onLaunch }) {
                     ref={museumLogoRef}
                     src={museumLogo}
                     alt="National Museums Logo"
-                        className="fixed z-10 -left-4 -bottom-6 w-40 h-40 md:w-[15rem] md:h-[15rem] object-contain opacity-85"
+                        className="fixed z-10 -left-4 -bottom-6 w-56 h-56 md:w-[22rem] md:h-[22rem] object-contain opacity-85"
                 />
             </div>
 
             {/* Subtitle */}
+            {/*
             <p
                 ref={subtitleRef}
                 className="fade-away relative z-30 max-w-xl text-lg md:text-xl text-[#361717]/100 mb-6 leading-relaxed"
@@ -201,6 +203,7 @@ export default function HeroSection({ onLaunch }) {
             >
                 Experience the launch of the Official National History Museum Website
             </p>
+            */}
 
             {/* Feature pills */}
             {/* <div ref={featuresRef} className="fade-away flex flex-wrap justify-center gap-3 mb-10">
@@ -228,6 +231,7 @@ export default function HeroSection({ onLaunch }) {
             </br>
             <br>
             </br>
+            <br></br>
             {/* Launch Button */}
             <button
                 ref={btnRef}
@@ -238,5 +242,6 @@ export default function HeroSection({ onLaunch }) {
                 <span className="btn-text relative z-10">LAUNCH</span>
             </button>
         </div>
+        </section>
     )
 }
