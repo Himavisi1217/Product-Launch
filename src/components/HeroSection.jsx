@@ -12,6 +12,7 @@ export default function HeroSection({ onLaunch }) {
     const btnRef = useRef()
     const taglineRef = useRef()
     const badgeRef = useRef()
+    const solutionProviderRef = useRef()
     const featuresRef = useRef()
 
     useEffect(() => {
@@ -23,6 +24,14 @@ export default function HeroSection({ onLaunch }) {
                 sltLogoRef.current,
                 { opacity: 0, x: 30 },
                 { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out' }
+            )
+
+            // Solution Provider text entrance
+            tl.fromTo(
+                solutionProviderRef.current,
+                { opacity: 0, x: 30 },
+                { opacity: 1, x: 0, duration: 0.8, ease: 'power3.out' },
+                '-=0.6'
             )
 
             // Badge entrance
@@ -137,14 +146,17 @@ export default function HeroSection({ onLaunch }) {
             ref={containerRef}
             className="relative z-20 flex flex-col items-center justify-center h-full px-6 text-center"
         >
+            {/* Solution Provider Text - Bottom Right */}
+            <span
+                ref={solutionProviderRef}
+                className="fixed z-10 right-14 bottom-48 text-xl md:text-2xl font-medium tracking-widest uppercase text-[#361717]"
+                style={{ fontFamily: 'var(--font-mono)' }}
+            >
+                Solution Provider
+            </span>
+
             {/* SLT-Mobitel Logo - Bottom Right */}
-            <div ref={sltLogoRef} className="fixed z-10 right-22 bottom-32 flex flex-col items-center gap-2">
-                <span
-                    className="text-xl md:text-2xl font-medium tracking-widest uppercase text-[#361717]"
-                    style={{ fontFamily: 'var(--font-mono)' }}
-                >
-                    Solution Provider
-                </span>
+            <div ref={sltLogoRef} className="fixed z-10 right-28 bottom-36 flex flex-col items-center gap-2">
                 <img
                     src={sltMobitelLogo}
                     alt="SLT-Mobitel Logo"
@@ -177,7 +189,7 @@ export default function HeroSection({ onLaunch }) {
                     ref={museumLogoRef}
                     src={museumLogo}
                     alt="National Museums Logo"
-                    className="fixed z-10 -left-6 -bottom-8 w-80 h-80 md:w-[30rem] md:h-[30rem] object-contain opacity-85"
+                    className="fixed z-10 -left-10 -bottom-12 w-96 h-96 md:w-[34rem] md:h-[34rem] object-contain opacity-85"
                 />
             </div>
 
@@ -216,8 +228,7 @@ export default function HeroSection({ onLaunch }) {
             </br>
             <br>
             </br>
-            <br>
-            </br>
+            <br></br>
             <br></br>
             <br>
             </br>
