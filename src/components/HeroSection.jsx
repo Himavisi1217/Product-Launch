@@ -150,14 +150,14 @@ export default function HeroSection({ onLaunch }) {
             {/* Solution Provider Text - Bottom Right */}
             <span
                 ref={solutionProviderRef}
-                className="fixed z-10 right-12 bottom-32 text-lg md:text-2xl font-bold tracking-widest uppercase text-[#361717]"
+                className="fixed z-10 right-8 bottom-48 text-lg md:text-2xl font-bold tracking-widest uppercase text-[#361717]"
                 style={{ fontFamily: 'var(--font-mono)' }}
             >
                 Solution Provider
             </span>
 
             {/* SLT-Mobitel Logo - Bottom Right */}
-            <div ref={sltLogoRef} className="fixed z-10 right-16 bottom-8 flex flex-col items-center gap-2">
+            <div ref={sltLogoRef} className="fixed z-10 right-16 bottom-16 flex flex-col items-center gap-2">
                 <img
                     src={sltMobitelLogo}
                     alt="SLT-Mobitel Logo"
