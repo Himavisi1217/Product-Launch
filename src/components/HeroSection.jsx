@@ -142,7 +142,7 @@ export default function HeroSection({ onLaunch }) {
     }
 
     return (
-        <section className="hero-movable-section" style={{ marginTop: '12rem' }}>
+        <section className="hero-movable-section" style={{ marginTop: '16rem' }}>
         <div
             ref={containerRef}
             className="relative z-20 flex flex-col items-center justify-center h-full px-6 pb-0 text-center"
@@ -150,7 +150,7 @@ export default function HeroSection({ onLaunch }) {
             {/* Solution Provider Text - Bottom Right */}
             <span
                 ref={solutionProviderRef}
-                className="fixed z-10 right-12 bottom-32 text-xs md:text-sm tracking-widest uppercase text-[#361717]"
+                className="fixed z-10 right-12 bottom-24 text-xs md:text-sm tracking-widest uppercase text-[#361717]"
                 style={{ fontFamily: 'var(--font-mono)', fontWeight: 400 }}
             >
                 Solution Provider
@@ -181,7 +181,7 @@ export default function HeroSection({ onLaunch }) {
             <div className="relative z-20">
                 <h1
                     ref={titleRef}
-                    className="fade-away relative z-30 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-1"
+                    className="fade-away relative z-30 text-4xl md:text-6xl lg:text-7xl font-black tracking-tight mb-1 mt-16"
                     style={{ fontFamily: 'var(--font-heading)', lineHeight: 1.1 }}
                 >
                     <span className="glow-text">{splitText('DEPARTMENT OF')}</span>
@@ -192,7 +192,7 @@ export default function HeroSection({ onLaunch }) {
                     ref={museumLogoRef}
                     src={museumLogo}
                     alt="National Museums Logo"
-                        className="fixed z-10 -left-12 -bottom-10 w-56 h-56 md:w-[22rem] md:h-[22rem] object-contain opacity-85"
+                        className="fixed z-10 -left-8 -bottom-10 w-56 h-56 md:w-[22rem] md:h-[22rem] object-contain opacity-85"
                 />
             </div>
 
