@@ -231,8 +231,6 @@ export default function HeroSection({ onLaunch }) {
             <br>
 
             </br>
-            <br>
-            </br>
             <br></br>
             {/* Launch Button */}
             <button
