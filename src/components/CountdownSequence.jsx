@@ -263,27 +263,17 @@ export default function CountdownSequence({ onComplete }) {
 
                 <span
                     className="countdown-number"
-                    style={{ color: phase.color }}
+                    style={{
+                        color: phase.color,
+                        transform: phase.number === 2 || phase.number === 1 ? 'translateY(48px)' : undefined
+                    }}
                 >
                     {phase.number}
                 </span>
 
             </div>
 
-            <div className="mt-10 flex flex-col items-center">
-
-                <div className="progress-track">
-
-                    <div
-                        className="progress-fill"
-                        style={{
-                            width: `${progress}%`
-                        }}
-                    />
-
-                </div>
-
-            </div>
+                {/* Progress bar removed */}
 
             {/* AUDIO ELEMENTS */}
 
