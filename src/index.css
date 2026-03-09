@@ -29,7 +29,7 @@ body,
 
 body {
   font-family: var(--font-body);
-  background: url('./bgnew1.png') no-repeat center center fixed;
+  background: url('./bgnew2.png') no-repeat center center fixed;
   background-size: cover;
   color: #361717;
   -webkit-font-smoothing: antialiased;
